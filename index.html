@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#080C10">
+<title>Wet N Wild Rentals — Sea-Doos on the Grand, Port Maitland</title>
+<meta name="description" content="Sea-Doo rentals on the lower Grand River at Port Maitland, Ontario. $200/hour or $500/day — gas, launch and jackets included.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#E6EDF3;        /* text on dark */
+  --paper:#0D1117;      /* near-black base */
+  --panel:#161C24;      /* raised surface */
+  --coral:#2E8BC0;      /* deep water blue accent */
+  --mango:#2E8BC0;
+  --teal:#7FA8C4;       /* steel blue */
+  --foam:#1E262F;       /* dark steel tint */
+  --grey:#8A97A3;
+  --line:#28323C;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{
+  background:var(--paper);color:var(--ink);
+  font-family:'Barlow',system-ui,sans-serif;font-size:16.5px;line-height:1.6;
+  padding-bottom:env(safe-area-inset-bottom);
+}
+img{max-width:100%;display:block}
+.wrap{max-width:640px;margin:0 auto;padding:0 20px}
+.disp{font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.02em;line-height:1}
+
+/* ---------- header ---------- */
+header{
+  background:#080C10;
+  color:#fff;padding:30px 0 26px;position:relative;overflow:hidden;
+}
+header::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--coral);
+}
+.brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.02em;font-size:clamp(40px,12vw,62px);line-height:.95;letter-spacing:-.5px}
+.brand em{font-style:normal;color:var(--coral)}
+.slogan{
+  font-family:'Barlow',sans-serif;font-weight:500;font-size:clamp(15px,4.2vw,18px);
+  margin-top:10px;color:#B8C2C9;font-style:italic;
+}
+.slogan b{color:var(--mango);font-weight:800}
+.pin{display:inline-block;margin-top:12px;background:transparent;border:1px solid #4A555C;color:#B8C2C9;
+  padding:5px 12px;border-radius:2px;font-size:12.5px;font-weight:700;letter-spacing:.05em}
+
+/* ---------- tabs ---------- */
+nav{position:sticky;top:0;z-index:60;background:rgba(13,17,23,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.tabs{display:flex;overflow-x:auto;scrollbar-width:none;max-width:640px;margin:0 auto;padding:8px 12px}
+.tabs::-webkit-scrollbar{display:none}
+.tab{
+  flex:0 0 auto;background:none;border:0;color:var(--grey);
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.03em;font-size:15px;
+  padding:9px 15px;margin-right:4px;border-radius:2px;cursor:pointer;white-space:nowrap;
+}
+.tab.on{background:var(--coral);color:#fff}
+
+.panel{display:none;padding:26px 0 56px;animation:pop .28s ease}
+.panel.on{display:block}
+@keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.panel{animation:none}}
+
+h2{font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.02em;font-size:35px;line-height:1.05;margin-bottom:4px}
+.sub{color:var(--grey);font-size:15px;font-weight:600;margin-bottom:20px}
+h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.03em;font-size:21px;color:var(--teal);margin:26px 0 8px}
+p{margin-bottom:14px}
+
+/* ---------- photos ---------- */
+figure{margin:0 0 20px;border-radius:3px;overflow:hidden;border:1px solid var(--line)}
+figure img{width:100%;height:auto}
+figcaption{background:var(--panel);border-top:1px solid var(--line);color:#96A6B4;font-size:12.5px;font-weight:600;padding:9px 14px}
+.ph{position:relative}
+.ph::before{
+  content:"PLACEHOLDER";position:absolute;top:10px;left:10px;z-index:2;
+  background:var(--coral);color:#fff;font-size:10px;font-weight:800;letter-spacing:.12em;
+  padding:4px 9px;border-radius:2px;
+}
+
+/* ---------- hero blurb ---------- */
+.hero{background:var(--panel);border-left:3px solid var(--coral);padding:18px 20px;margin-bottom:22px}
+.hero p{margin:0;font-size:18px;font-weight:700;color:var(--ink)}
+.hero p span{color:var(--coral)}
+
+/* ---------- pricing ---------- */
+.price{border:1px solid var(--line);border-radius:3px;padding:20px;margin-bottom:14px;background:var(--panel)}
+.price.feature{border-color:var(--coral);background:#132330}
+.price .lbl{font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.03em;font-size:18px;color:var(--teal)}
+.price .amt{font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.02em;font-size:52px;line-height:1;color:var(--ink)}
+.price .amt small{font-size:17px;color:var(--grey);font-weight:600}
+.badge{display:inline-block;background:var(--coral);color:#fff;font-size:11px;font-weight:800;
+  letter-spacing:.1em;padding:4px 9px;border-radius:2px;margin-bottom:8px}
+
+ul.inc{list-style:none}
+ul.inc li{padding:9px 0 9px 30px;position:relative;font-weight:600;border-bottom:1px solid var(--line)}
+ul.inc li:last-child{border:0}
+ul.inc li::before{content:"";position:absolute;left:6px;top:17px;width:8px;height:8px;
+  background:var(--coral)}
+
+/* ---------- calendar ---------- */
+.calhead{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.calhead .mon{font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.02em;font-size:26px}
+.navbtn{background:var(--panel);border:1px solid var(--line);color:var(--ink);width:44px;height:44px;border-radius:3px;
+  font-size:22px;font-weight:800;cursor:pointer}
+.navbtn:active{background:var(--coral);color:#fff}
+.dow{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-bottom:6px}
+.dow span{text-align:center;font-size:11.5px;font-weight:800;color:var(--grey)}
+.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
+.day{aspect-ratio:1;border-radius:3px;display:flex;align-items:center;justify-content:center;
+  font-size:15px;font-weight:800}
+.day.pad{visibility:hidden}
+.day.open{background:#1B2A38;color:#8FC3E3}
+.day.some{background:#2B3A2A;color:#A9CF9B}
+.day.full{background:#141A21;color:#4C5763;text-decoration:line-through}
+.day.past{opacity:.3}
+.legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px;font-size:13.5px;font-weight:700;color:var(--grey)}
+.legend i{display:inline-block;width:13px;height:13px;border-radius:2px;margin-right:6px;vertical-align:-2px}
+
+/* ---------- contact ---------- */
+.card{border:1px solid var(--line);border-radius:3px;padding:18px;margin-bottom:12px;background:var(--panel)}
+.card .k{font-size:12px;font-weight:800;letter-spacing:.1em;color:var(--teal);margin-bottom:4px}
+.card .v{font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.02em;font-size:23px}
+.card .v a{color:var(--ink);text-decoration:none}
+.cta{display:block;text-align:center;background:var(--coral);color:#fff;
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.02em;font-size:24px;
+  padding:15px;border-radius:2px;text-decoration:none;margin:20px 0 8px;letter-spacing:.06em;
+  box-shadow:none}
+.cta:active{background:#246E99}
+.cta.alt{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.cta.alt:active{background:var(--panel)}
+
+.quote{background:var(--ink);color:#B8C2C9;border-radius:3px;padding:18px 20px;margin:18px 0;
+  font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:19px;line-height:1.4}
+.fact{display:flex;gap:14px;align-items:center;padding:11px 0;border-bottom:1px solid var(--line);font-weight:600}
+.fact b{font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.02em;font-size:30px;color:var(--coral);min-width:64px;line-height:1}
+
+footer{background:#080C10;border-top:1px solid var(--line);color:#7D8994;padding:26px 0 36px;text-align:center;font-size:13.5px}
+footer .bs{font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.02em;font-size:24px;color:#fff}
+footer .bs em{font-style:normal;color:var(--coral)}
+:focus-visible{outline:3px solid var(--coral);outline-offset:2px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">Wet <em>N</em> Wild<br>Rentals</div>
+    <div class="slogan">If we don't get you wet… <b>it'll be wild.</b></div>
+    <div class="pin">Port Maitland, ON &middot; Sea-Doo Rentals</div>
+  </div>
+</header>
+
+<nav>
+  <div class="tabs" role="tablist">
+    <button class="tab on" data-p="home">Home</button>
+    <button class="tab" data-p="pricing">Pricing</button>
+    <button class="tab" data-p="avail">Availability</button>
+    <button class="tab" data-p="about">About Brad</button>
+    <button class="tab" data-p="contact">Contact</button>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<!-- HOME -->
+<section class="panel on" id="home">
+  <figure class="ph">
+    <img src="img/seadoos.jpg" alt="Group of riders on Sea-Doos" loading="eager">
+    <figcaption>Placeholder — swap for Brad's own dock photos</figcaption>
+  </figure>
+
+  <div class="hero">
+    <p>Where the Grand runs out into <span>Lake Erie</span>. Tanks full, jackets out, launched off our dock. Show up and go.</p>
+  </div>
+
+  <h2>What's on the water</h2>
+  <p class="sub">Small fleet, kept sharp — not a rental lot.</p>
+
+  <ul class="inc">
+    <li>Late-model Sea-Doo three-seaters, serviced every spring</li>
+    <li>Full tank at the start — no fuel surcharge after</li>
+    <li>Transport Canada–approved jackets, every size</li>
+    <li>Launch and dock access, no ramp fees</li>
+    <li>Safety kit and a real briefing before you leave</li>
+  </ul>
+
+  <h3>Your playground</h3>
+  <figure class="ph">
+    <img src="img/river.jpg" alt="Aerial view of the lower Grand River" loading="lazy">
+    <figcaption>Placeholder — the lower Grand above Port Maitland</figcaption>
+  </figure>
+  <p>The stretch below Dunnville runs wide and calm — forgiving water if it's your first time on a ski. Follow it south through the Port Maitland piers and you're into open Erie. On a flat morning the locals run the shoreline east toward Rock Point.</p>
+
+  <h3>Fine print, short version</h3>
+  <ul class="inc">
+    <li>Boat licence (PCOC) required to drive — bring it</li>
+    <li>16+ to operate, riders any age in a fitted jacket</li>
+    <li>Damage deposit on a card, released on return</li>
+    <li>Weather calls made morning-of — we cancel, you don't pay</li>
+  </ul>
+
+  <a class="cta" href="tel:9389453687">Call 938-WILD-ONT</a>
+</section>
+
+<!-- PRICING -->
+<section class="panel" id="pricing">
+  <h2>Pricing</h2>
+  <p class="sub">One rate, everything in it. Nothing sprung on you at the dock.</p>
+
+  <div class="price">
+    <div class="lbl">By the hour</div>
+    <div class="amt">$200<small> /hr</small></div>
+  </div>
+
+  <div class="price feature">
+    <span class="badge">BEST VALUE</span>
+    <div class="lbl">Full day</div>
+    <div class="amt">$500<small> /day</small></div>
+    <p style="margin:10px 0 0;font-weight:600;color:var(--grey)">Dock at 9, back by 6. Barely more than two hours' rate for the whole day.</p>
+  </div>
+
+  <h3>Always included</h3>
+  <ul class="inc">
+    <li>Gas — filled before you leave the dock</li>
+    <li>Launch and retrieval, we handle it</li>
+    <li>Life jackets for every rider</li>
+    <li>Safety kit and dock briefing</li>
+    <li>Dry bag for phones and keys</li>
+  </ul>
+
+  <h3>Paying &amp; cancelling</h3>
+  <p>Deposit holds the slot, balance at the dock. Cash, debit, credit. Cancel 24 hours out for a full refund — and if the weather kills it, you're not charged a cent.</p>
+
+  <a class="cta" href="tel:9389453687">Book by phone</a>
+  <a class="cta alt" href="#" data-go="avail">See open dates</a>
+</section>
+
+<!-- AVAILABILITY -->
+<section class="panel" id="avail">
+  <h2>Availability</h2>
+  <p class="sub">Brad updates it each morning. Call to lock your slot.</p>
+
+  <div class="calhead">
+    <button class="navbtn" id="prev" aria-label="Previous month">&lsaquo;</button>
+    <div class="mon" id="mon"></div>
+    <button class="navbtn" id="next" aria-label="Next month">&rsaquo;</button>
+  </div>
+
+  <div class="dow"><span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span></div>
+  <div class="grid" id="grid"></div>
+
+  <div class="legend">
+    <span><i style="background:#1B2A38;border:1px solid #2E4A5F"></i>Open</span>
+    <span><i style="background:#2B3A2A;border:1px solid #45603F"></i>Limited</span>
+    <span><i style="background:#141A21;border:1px solid var(--line)"></i>Booked</span>
+  </div>
+
+  <h3>The season</h3>
+  <p>Mid-May to early October, weather permitting. July and August weekends move fast — a week's notice is comfortable, a day's notice is a coin flip.</p>
+
+  <a class="cta" href="tel:9389453687">Call to reserve</a>
+</section>
+
+<!-- ABOUT -->
+<section class="panel" id="about">
+  <h2>About Brad</h2>
+  <p class="sub">Owner, mechanic, and the guy handing you the key</p>
+
+  <p>Brad grew up a few hundred metres from where the Grand meets Erie. His family kept a boat at Port Maitland before he could walk, and he's been on this water every summer since — first on his dad's ski boat, then on whatever ski he could keep running through a season.</p>
+
+  <p>He's spent his working life around personal watercraft: wrenching on them, running them, and towing people back in when a weekend rider gets in over their head. Wet N Wild came out of that — a small fleet he maintains himself, so he knows exactly what shape every machine is in when it leaves the dock.</p>
+
+  <div class="quote">"If it isn't right, it doesn't go out. That's the whole business model."</div>
+
+  <h3>By the numbers</h3>
+  <div class="fact"><b>30+</b><span>Years on the lower Grand and the Erie shoreline</span></div>
+  <div class="fact"><b>100%</b><span>Of the wrenching done in-house, by Brad</span></div>
+  <div class="fact"><b>0</b><span>Surprise fees at the dock</span></div>
+
+  <h3>What to expect</h3>
+  <p>A real briefing, not a waiver and a shrug. Never been on a ski? Say so — Brad walks you through the throttle, the no-wake zones, and where the sandbars sit. Been riding twenty years? He'll point you east toward Rock Point and get out of your way.</p>
+
+  <a class="cta" href="tel:9389453687">Talk to Brad</a>
+</section>
+
+<!-- CONTACT -->
+<section class="panel" id="contact">
+  <h2>Contact us</h2>
+  <p class="sub">Phone's fastest. He's usually on the dock.</p>
+
+  <div class="card">
+    <div class="k">PHONE</div>
+    <div class="v"><a href="tel:9389453687">938-WILD-ONT</a></div>
+  </div>
+
+  <div class="card">
+    <div class="k">WHERE WE ARE</div>
+    <div class="v">Port Maitland, ON</div>
+    <p style="margin:8px 0 0;font-weight:600;color:var(--grey)">Lower Grand River at the Lake Erie mouth. Exact dock address when you book.</p>
+  </div>
+
+  <div class="card">
+    <div class="k">HOURS</div>
+    <div class="v">9am – 7pm daily</div>
+    <p style="margin:8px 0 0;font-weight:600;color:var(--grey)">May through October. Off-season, leave a message.</p>
+  </div>
+
+  <h3>Have ready when you call</h3>
+  <p>Your date, how many riders, and hourly or full day. Turns a five-minute call into a ninety-second one.</p>
+
+  <a class="cta" href="tel:9389453687">Call now</a>
+  <a class="cta alt" href="sms:9389453687">Send a text</a>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="bs">Wet <em>N</em> Wild Rentals</div>
+    <p style="margin-top:6px">Port Maitland, ON &middot; 938-WILD-ONT</p>
+    <p style="margin:0;font-size:12.5px">Ride sober. Wear your jacket. Mind the piers.</p>
+  </div>
+</footer>
+
+<script>
+var tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');
+function show(id){
+  tabs.forEach(function(t){t.classList.toggle('on',t.dataset.p===id)});
+  panels.forEach(function(p){p.classList.toggle('on',p.id===id)});
+  window.scrollTo({top:0,behavior:'instant'});
+}
+tabs.forEach(function(t){t.addEventListener('click',function(){show(t.dataset.p)})});
+document.querySelectorAll('[data-go]').forEach(function(a){
+  a.addEventListener('click',function(e){e.preventDefault();show(a.dataset.go)});
+});
+
+var view=new Date();view.setDate(1);
+var today=new Date();today.setHours(0,0,0,0);
+var MN=['January','February','March','April','May','June','July','August','September','October','November','December'];
+function status(d){
+  var m=d.getMonth();
+  if(m<4||m>9)return 'full';
+  var dow=d.getDay(),n=d.getDate();
+  if(dow===0||dow===6)return (n%3===0)?'full':'some';
+  return (n%7===0)?'some':'open';
+}
+function render(){
+  document.getElementById('mon').textContent=MN[view.getMonth()]+' '+view.getFullYear();
+  var g=document.getElementById('grid');g.innerHTML='';
+  var first=new Date(view.getFullYear(),view.getMonth(),1).getDay();
+  var days=new Date(view.getFullYear(),view.getMonth()+1,0).getDate();
+  for(var i=0;i<first;i++){var p=document.createElement('div');p.className='day pad';g.appendChild(p)}
+  for(var d=1;d<=days;d++){
+    var dt=new Date(view.getFullYear(),view.getMonth(),d),el=document.createElement('div');
+    el.className='day '+status(dt)+(dt<today?' past':'');
+    el.textContent=d;g.appendChild(el);
+  }
+}
+document.getElementById('prev').onclick=function(){view.setMonth(view.getMonth()-1);render()};
+document.getElementById('next').onclick=function(){view.setMonth(view.getMonth()+1);render()};
+render();
+</script>
+</body>
+</html>
